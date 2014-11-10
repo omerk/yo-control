@@ -1,0 +1,36 @@
+body {
+	background-color: black;
+	text-align: center;
+}
+
+#debug {
+	padding-top: 50px;
+}
+
+#debug_msg {
+	color: white;
+	font-family: sans-serif;
+	font-size: 120px;
+}
+
+#circles {
+	position: absolute; 
+	bottom: -7px;
+}
+
+.circle {
+	background-color: black;
+	-moz-border-radius: 110px;-webkit-border-radius: 110px;
+	border-radius:110px;
+	width: 220px;
+	height: 220px;
+	float: left;
+}
+
+.on {
+	background-color: white;
+}
+
+.spacer {
+	margin-right: 20px;
+}
