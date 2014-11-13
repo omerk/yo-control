@@ -1,3 +1,6 @@
+var pusher = new Pusher('insert-pusher-key-here');
+var channel = pusher.subscribe('yo-control');
+
 var circle1;
 var circle2;
 var circle3;
@@ -82,7 +85,28 @@ function init() {
 	circle4 = document.getElementById("circle4");
 	msg = document.getElementById("debug_msg");
 	
-	demo();
+	channel.bind('move', function(data) {
+		console.log(data.direction);
+	
+		switch (data.direction) {
+			case 'forward':
+				go_forward();
+			break;
+
+			case 'reverse':
+				go_reverse();
+			break;
+
+			case 'left':
+				go_left();
+			break;
+
+			case 'right':
+				go_right();
+			break;
+		}
+	});
+
 }
 
 window.onload = init;
